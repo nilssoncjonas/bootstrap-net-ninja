@@ -83,12 +83,16 @@
             </p>
             <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
           </div>
-          <div class="col-md-5 text-center">
-            <img
+          <div class="col-md-5 text-center d-none d-md-block">
+            <!-- tooltip -->
+            <span class="tt" data-bs-placement="bottom" title="Net Ninja Book Cover">
+
+              <img
               src="/assets/ebook-cover.png"
               alt="eBook Cover"
-              class="img-fluid d-none d-md-block"
-            />
+              class="img-fluid "
+              />
+            </span>
           </div>
         </div>
       </div>
@@ -471,7 +475,7 @@
           <div class="col-lg-6">
             <form>
 
-              <label for="email" class="form-label">Email adress:</label>
+              <label for="email" class="form-label">Email address:</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text">
                   <i class="bi bi-envelope-fill"></i>
@@ -483,6 +487,13 @@
                 id="email"
                 placeholder="e.g. mario@example.com"
                 />
+                <!-- tooltip -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="top" title="Enter an email address we can reply to!">
+
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
               </div>
 
               <label for="name" class="form-label">Name:</label>
@@ -498,6 +509,13 @@
                 id="name"
                 placeholder="e.g. Mario"
                 />
+                <!-- tooltip -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="top" title="Pretty self explanatory really...">
+
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
               </div>
 
               <label for="subject" class="form-label"
@@ -534,5 +552,12 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const tooltips = document.querySelectorAll('.tt')
+      tooltips.forEach(t => {
+        new bootstrap.Tooltip(t)
+      })
+    </script>
   </body>
 </html>
